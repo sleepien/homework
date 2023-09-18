@@ -52,46 +52,46 @@ function App() {
 
   const caesarCipherCrypt = (string, shift) => {
     // алфавит, можно заменить на любой другой и все будет ок
-    const alphabet= 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
+    const alphabet= 'яюэьыъщшчцхфутсрпонмлкйизжёедгвба';
   
-    // Расшифрованный текст
-    let encodedText= '';
+     // Расшифрованный текст
+     let encodedText= '';
   
-    // на случай если шаг возьмут больше чем букв в алфавите
-    if (shift > 33) {
-      
-      shift = shift % 33;
-    }
-  
-    // Итерируемся
-    let i = 0;
-    while (i < string.length) {
-      // Валидные символы
-      if (alphabet.indexOf(string[i]) !== -1) {
-        // Поиск индекса в алфавите
-        const alphabetIndex = alphabet.indexOf((string[i]));
-  
-        // В рендже алфавита из 33 символов
-        if (alphabet[alphabetIndex + shift]) {
-          // объединяем в текст
-          encodedText += alphabet[alphabetIndex - shift];
-        }
-        // Не в рендже
-        else {
-          // объединяем в текст
-          encodedText += alphabet[alphabetIndex - shift - 33];
-        }
-      }
-      // Особенные символы
-      else {
-        // Объединяем в текст
-        encodedText += string[i];
-      }
-  
-      i++;
-    }
-  
-    return encodedText;
+     // на случай если шаг возьмут больше чем букв в алфавите
+     if (shift > 33) {
+       
+       shift = shift % 33;
+     }
+   
+     // Итерируемся
+     let i = 0;
+     while (i < string.length) {
+       // Валидные символы
+       if (alphabet.indexOf(string[i]) !== -1) {
+         // Поиск индекса в алфавите
+         const alphabetIndex = alphabet.indexOf((string[i]));
+   
+         // В рендже алфавита из 33 символов
+         if (alphabet[alphabetIndex + shift]) {
+           // объединяем в текст
+           encodedText += alphabet[alphabetIndex + shift];
+         }
+         // Не в рендже
+         else {
+           // объединяем в текст
+           encodedText += alphabet[alphabetIndex + shift - 33];
+         }
+       }
+       // Особенные символы
+       else {
+         // Объединяем в текст
+         encodedText += string[i];
+       }
+   
+       i++;
+     }
+   
+     return encodedText;
   };
 
   const getResult = () => {
