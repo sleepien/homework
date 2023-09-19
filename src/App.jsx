@@ -100,7 +100,7 @@ function App() {
   }
 
   const getResultCrypt = () => {
-    const word = caesarCipherCrypt(input.toLowerCase(), 33-step)
+    const word = caesarCipherCrypt(input.toLowerCase(), step)
     setAnswer(word)
    }
 
