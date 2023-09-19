@@ -95,12 +95,12 @@ function App() {
   };
 
   const getResult = () => {
-   const word = caesarCipher(input, step)
+   const word = caesarCipher(input.toLowerCase(), step)
    setAnswer(word)
   }
 
   const getResultCrypt = () => {
-    const word = caesarCipherCrypt(input, step)
+    const word = caesarCipherCrypt(input.toLowerCase(), step)
     setAnswer(word)
    }
 
